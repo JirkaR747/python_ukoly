@@ -1,5 +1,5 @@
 numbers = [1, 2, 4, -6, 7, 8, 100, -125, 11, 123]
-names = ["Petr", "Ales", "Honza", "Lenka", "Andrea", "Alice"]
+names = ["Petr", "Ales", "Honza", "Lenka", "Andrea","Alice"]
 random_codes = ["1-okdsaaa", "0-nFnldd", "0-AA", "0-uwqqq", "2-ZSTh", "0-RKOcsxxx", "1-LwWtss", "0-cdKiddd", "2-KpAAaa", "3-sOdSxhcds"]
 
 # 1. pomocí cyklu for vypište čísla ze seznamu numbers, ale přeskočte záporná čísla.
@@ -22,7 +22,7 @@ for number in numbers:
 # úkol 2 - cyklus vypíše všechna jména a skončí pokud narazí na Alice
 print("úkol číslo 2 : ")
 i=0
-while True:
+while len(names)>i:
     if names[i] == "Alice":
         break
     print(names[i])

@@ -45,7 +45,7 @@ def is_name_valid(user_name: str) -> bool:
 
 # funkce pro vytvoření slovníku reprezentující uživatele
 
-def create_user(username: str, age: int, email: str) -> {bool, {}}:
+def create_user(username: str, age: int, email: str) -> {}:
     if is_adult(age) == False:
         return {"succes": False, "error": "Chyba vstupních dat: věk je příliš nízký"}
     if is_name_valid(username) == False:
@@ -63,15 +63,35 @@ def print_user_info(user: []) -> None:
         print(user["error"])
 
 
+
+
+#   funkce vytvořené mad rámec úkolu
+# funkce pro vytvoření menu
+
+def print_menu()->None:
+    print("Pokračuj stiskem klávesy")
+    print("(Z)adej nového uživatele , (V)ypiš všechny uživatele , (K)onec")
+
+def menu() -> None:
+    while True:
+        print("Pokračuj stiskem klávesy")
+        char_menu=input("(Z)adej nového uživatele , (V)ypiš všechny uživatele , (K)onec").lower()
+        if char_menu == "z" :
+            print("ano z")
+
+        if char_menu == "v":
+            print("ano V")
+
+        if char_menu == "k":
+            print("ano K")
+
+
+
+
+menu()
+
+
 # deklarace proměných
 # list pro uložení všech slovníků s uživateli
 list_users = []
-
-# vytvoření menu
-
-while True:
-
-    username = input("jmeno: ")
-    age = input("vek: ")
-    age = int(age)
-    email = input("email: ")
+user={}

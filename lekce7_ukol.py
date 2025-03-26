@@ -68,16 +68,20 @@ def print_user_info(user: []) -> None:
 #   funkce vytvořené mad rámec úkolu
 # funkce pro vytvoření menu
 
-def print_menu()->None:
-    print("Pokračuj stiskem klávesy")
-    print("(Z)adej nového uživatele , (V)ypiš všechny uživatele , (K)onec")
+# def print_menu()->None:
+#     print("Pokračuj stiskem klávesy")
+#     print("(Z)adej nového uživatele , (V)ypiš všechny uživatele , (K)onec")
+
+def new_user() ->[]:
+    list_users=[]
+    return list_users
 
 def menu() -> None:
     while True:
         print("Pokračuj stiskem klávesy")
         char_menu=input("(Z)adej nového uživatele , (V)ypiš všechny uživatele , (K)onec").lower()
         if char_menu == "z" :
-            print("ano z")
+            list_users.append(new_user())
 
         if char_menu == "v":
             print("ano V")

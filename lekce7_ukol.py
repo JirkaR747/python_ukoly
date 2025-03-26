@@ -45,18 +45,33 @@ def is_name_valid(user_name: str) -> bool:
 
 # funkce pro vytvoření slovníku reprezentující uživatele
 
-def create_user(username: str, age: int, email: str) -> {}:
+def create_user(username: str, age: int, email: str) -> {bool, {}}:
     if is_adult(age) == False:
-        print("chyba věk")
+        return {"succes": False, "error": "Chyba vstupních dat: věk je příliš nízký"}
     if is_name_valid(username) == False:
-        print("chyba jméno")
+        return {"succes": False, "error": "Chyba vstupních dat: jméno musí mít minimálně čtyři znaky"}
 
-    return {"username":username,"age":age,"email":email}
+    return {"succes": True, "user": {"username": username, "age": age, "email": email}}
 
-username=input("jmeno: ")
-age=input("vek: ")
-age=int(age)
-email=input("email: ")
 
-user=create_user(username,age,email)
-print(user)
+# funkce print pro vytištění uživatele do konzole, funkce rovněž tiskne chybové stavy
+
+def print_user_info(user: []) -> None:
+    if user["succes"]:
+        print(f"Jméno: {user[username]} ,věk: {user[age]}, email: {user[email]}")
+    else:
+        print(user["error"])
+
+
+# deklarace proměných
+# list pro uložení všech slovníků s uživateli
+list_users = []
+
+# vytvoření menu
+
+while True:
+
+    username = input("jmeno: ")
+    age = input("vek: ")
+    age = int(age)
+    email = input("email: ")

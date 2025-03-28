@@ -58,7 +58,7 @@ def create_user(username: str, age: int, email: str) -> {}:
 
 def print_user_info(user: []) -> None:
     if user["succes"]:
-        print(f"Jméno: {user[username]} ,věk: {user[age]}, email: {user[email]}")
+        print(f"Jméno: {user["username"]} ,věk: {user["age"]}, email: {user["email"]}")
     else:
         print(user["error"])
 
@@ -68,14 +68,16 @@ def print_user_info(user: []) -> None:
 #   funkce vytvořené mad rámec úkolu
 # funkce pro vytvoření menu
 
-# def print_menu()->None:
-#     print("Pokračuj stiskem klávesy")
-#     print("(Z)adej nového uživatele , (V)ypiš všechny uživatele , (K)onec")
-
+# funkce pro přidání nového uživatele
 def new_user() ->[]:
     list_users=[]
+    username=input("Zadej jméno")
+    age=input("Zadej věk")
+    email=input("zadej email")
     return list_users
 
+
+# menu
 def menu() -> None:
     while True:
         print("Pokračuj stiskem klávesy")
@@ -97,5 +99,5 @@ menu()
 
 # deklarace proměných
 # list pro uložení všech slovníků s uživateli
-list_users = []
-user={}
+#list_users = []
+#user={}

@@ -86,7 +86,7 @@ jmeno4 = "kuk"
 age4 = 25
 email4 = "kuk@kuk.com"
 
-# tato sekvence by se za normálních okolností načítala ve funkci a v cyklu
+# tato sekvence by se za normálních okolností načítala z uživatelského vstupu ve funkci a v cyklu
 
 
 user = create_user(jmeno1, age1, email1)

@@ -56,48 +56,63 @@ def create_user(username: str, age: int, email: str) -> {}:
 
 # funkce print pro vytištění uživatele do konzole, funkce rovněž tiskne chybové stavy
 
-def print_user_info(user: []) -> None:
+def print_user_info(user: dict) -> None:
     if user["succes"]:
-        print(f"Jméno: {user["username"]} ,věk: {user["age"]}, email: {user["email"]}")
+        print(f"Jméno: {user["user"]["username"]} ,věk: {user["user"]["age"]}, email: {user["user"]["email"]}")
     else:
         print(user["error"])
 
 
-
-
-#   funkce vytvořené mad rámec úkolu
-# funkce pro vytvoření menu
-
-# funkce pro přidání nového uživatele
-def new_user() ->[]:
-    list_users=[]
-    username=input("Zadej jméno")
-    age=input("Zadej věk")
-    email=input("zadej email")
-    return list_users
-
-
-# menu
-def menu() -> None:
-    while True:
-        print("Pokračuj stiskem klávesy")
-        char_menu=input("(Z)adej nového uživatele , (V)ypiš všechny uživatele , (K)onec").lower()
-        if char_menu == "z" :
-            list_users.append(new_user())
-
-        if char_menu == "v":
-            print("ano V")
-
-        if char_menu == "k":
-            print("ano K")
-
-
-
-
-menu()
-
-
 # deklarace proměných
 # list pro uložení všech slovníků s uživateli
-#list_users = []
-#user={}
+list_users = []
+
+
+
+
+jmeno1 = "Karel123"
+age1 = 24
+email1 = "karel123@atlas.cz"
+
+jmeno2 = "pavel8"
+age2 = 13
+email2 = "pavel@seznam.cz"
+
+jmeno3 = "jarda"
+age3 = 54
+email3 = "jarda@seznam.cz"
+
+jmeno4 = "kuk"
+age4 = 25
+email4 = "kuk@kuk.com"
+
+# tato sekvence by se za normálních okolností načítala ve funkci a v cyklu
+
+
+user = create_user(jmeno1, age1, email1)
+if user["succes"]:
+    list_users.append(user)
+else:
+    print_user_info(user)
+
+user = create_user(jmeno2, age2, email2)
+if user["succes"]:
+    list_users.append(user)
+else:
+    print_user_info(user)
+
+user = create_user(jmeno3, age3, email3)
+if user["succes"]:
+    list_users.append(user)
+else:
+    print_user_info(user)
+
+user = create_user(jmeno4, age4, email4)
+if user["succes"]:
+    list_users.append(user)
+else:
+    print_user_info(user)
+
+print("Výpis uživatelů v cyklu")
+for user in list_users:
+    print_user_info(user)
